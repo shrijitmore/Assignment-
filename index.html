@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Store</title>
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&family=Prompt:wght@200&display=swap');
+
+        body,
+        html {
+            background-color: rgb(225, 209, 209);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        li {
+            float: right;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        li:last-child {
+            font-size: 40px;
+        }
+
+        li a {
+            display: block;
+            color: rgb(2, 2, 2);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li:hover:not(.active) {
+            background-color: rgb(255, 250, 250);
+        }
+
+        .bg {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .bg img {
+            border-radius: 14px;
+        }
+
+        .text {
+            margin-left: 100px;
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+
+        button {
+            background-color: rgb(44, 38, 38);
+            color: rgb(255, 253, 253);
+            padding: 12px 12px 12px 12px;
+            border-radius: 12px;
+            font-size: large;
+            font-weight: bolder;
+        }
+
+        button a{
+            color: inherit;
+            text-decoration: none;
+
+        }
+        button:hover {
+            background-color: #63ee85;
+            color: rgb(0, 0, 0);
+        }
+    </style>
+
+    <div class="top-Container">
+
+        <ul>
+            <li><a href="/coffee.html">Menu</a></li>
+            <li><a href="#">Home</a></li>
+            <li class="active" style="float:left; font-weight: bold;"><a href="#">Coffeee</a></li>
+        </ul>
+
+        <div class="bg"><img src="/images/carousel-1.jpg" height="300px">
+            <div class="text">
+                <h1>We Have Been Serving</h1>
+                <h1>COFFEE</h1>
+                <h1>* SINCE 1950 *</h1>
+                <button>
+                  <a href="/coffee.html"> Order Now </a>
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

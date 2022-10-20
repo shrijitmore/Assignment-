@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: antiquewhite;
+            margin: 0;
+        }
+
+        .Menu {
+            height: 500px;
+            width: 500px;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .cardContainer {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1;
+            justify-content: center;
+            justify-content: space-evenly;
+        }
+
+        .card {
+            transition: 0.3s;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            border-radius: 5px;
+            background-color: black;
+            color: aliceblue;
+            width: 230px;
+            padding: 12px 12px 12px 12px;
+            display: flex;
+            margin-bottom: 12px;
+            justify-content: center;
+        }
+
+        .card p {
+            font-size: 10px;
+            margin-left: 12px;
+        }
+
+        .card p li {
+            list-style-type: none;
+        }
+
+        .card img {
+            border-radius: 5px 5px 0 0;
+            height: 100px;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        Main {
+            display: flex;
+            justify-content: center;
+            justify-content: space-around;
+            font-size: 25px;
+            font-weight: bold;
+            margin: 50px 180px 0px 180px;
+        }
+
+        select {
+            background-color: #6F4E37;
+            color: rgb(244, 242, 242);
+            height: 25px;
+            width: 150px;
+            font-weight: bold;
+            font-size: large;
+        }
+
+        .quantity {
+            font-weight: bold;
+            font-size: 25px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .quantity input {
+            font-size: 17px;
+            background-color: #6F4E37;
+            color: aliceblue;
+            font-weight: bold;
+        }
+
+        fieldset {
+            width: 500px;
+            margin: 40px 400px 60px 500px;
+        }
+
+        @media screen and (max-width: 800px) {
+            fieldset {
+                margin-top: 20;
+                margin-left: 60px;
+                margin-bottom: 100px;
+                width: 100px;
+            }
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 12px;
+        }
+        button{
+            background-color: rgb(44, 38, 38);
+            color: rgb(255, 253, 253);
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: bolder;
+        }
+    </style>
+    <section>
+        <div class="Menu">
+            <h1>Menu</h1>
+            <div class="cardContainer">
+                <div class="card">
+                    <img src="/images/service-2.jpg">
+                    <div class="container">
+                        <h4><b>Espresso</b></h4>
+                        <p id="p1"> </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/images/service-3.jpg">
+                    <div class="container">
+                        <h4><b>Cappuchino</b></h4>
+                        <p id="p2"> </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/images/latte.jpg">
+                    <div class="container">
+                        <h4><b>Latte</b></h4>
+                        <p id="p3"> </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+    <h1 style="text-align: center; margin-top:40px;">Billing</h1>
+    <Main>
+        <div>
+            <label for="Coffee">Choose Coffee to Order :- </label>
+            <select name="Coffee" id="orderOp">
+                <option value="Espresso">Espresso</option>
+                <option value="Cappuchino">Cappuchino</option>
+                <option value="Latte">Latte</option>
+            </select>
+        </div>
+        <div>
+            <label for="Coffee">Choose ad-on :- </label>
+            <select name="ad-on" id="orderad">
+                <option value="Milk">Milk</option>
+                <option value="Cream">Cream</option>
+                <option value="Latte">Latte</option>
+            </select>
+        </div>
+    </Main>
+    <div class="quantity">
+        Quantity : <input type="number" id="quantity" value=0>
+        <Button class="submit">Submit</Button>
+        <fieldset>
+            <legend>Personal Details</legend>
+            <label for="Name">Enter name : </label>
+            <input type="text" name="fname" placeholder="Name"><br>
+            <label for="Number">Enter Phone no. </label>
+            <input type="number" placeholder="Phone no." id="pnumber">
+        </fieldset>
+        <fieldset>
+            <legend>Your Bill</legend>
+            <h4>Your Name :- <span id="name"></span></h4>
+            <h4>Your Phone no. :- <span id="number"></span></h4>
+            <table class="tb">
+                <tr>
+                    <th>Menu</th>
+                    <th>ad-on</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total Amount</th>
+
+                </tr>
+            </table>
+        </fieldset>
+
+        <h1>Total Amount to be Paid : <span id="amount"></span></h1>
+    </div>
+</body>
+<script>
+    const p1 = document.getElementById('p1');
+    const p2 = document.getElementById('p2');
+    const p3 = document.getElementById('p3');
+    const fname = document.querySelector("input[name='fname']");
+    const pnumber = document.querySelector("#pnumber");
+    const submit = document.querySelector('.submit')
+    const table = document.querySelector('.tb');
+    let totalA = 0;
+    let content = [
+        { "Milk": 60, "Cream": 75, "Latte": 100 },
+        { "Milk": 80, "Cream": 90, "Latte": 125 },
+        { "Milk": 100, "Cream": 125, "Latte": 150 }
+    ]
+    let Espresso = content[0];
+    let Cappuchino = content[1];
+    let Latte = content[2];
+
+    p1.innerHTML = `Prices:<br> 
+        <li>With Milk ${Espresso.Milk}₹</li> 
+        <li>With Cream ${Espresso.Cream}₹</li>
+        <li>With Latte ${Espresso.Latte}₹</li>`
+    p2.innerHTML = `Prices:<br> 
+        <li>With Milk ${Cappuchino.Milk}₹</li> 
+        <li>With Cream ${Cappuchino.Cream}₹</li>
+        <li>With Latte ${Cappuchino.Latte}₹</li>`
+    p3.innerHTML = `Prices:<br> 
+        <li>With Milk ${Latte.Milk}₹</li> 
+        <li>With Cream ${Latte.Cream}₹</li>
+        <li>With Latte ${Latte.Latte}₹</li>
+        `
+    fname.addEventListener("keyup",()=>{
+        document.getElementById('name').innerHTML = fname.value;
+    })
+
+    pnumber.addEventListener("keyup",()=>{
+        document.getElementById('number').innerHTML = pnumber.value;
+    })
+    
+    submit.addEventListener("click",()=>{
+        let coffee = document.querySelector('#orderOp').value;
+        let adOn = document.querySelector('#orderad').value;
+        let Quan = document.querySelector('#quantity').value;
+        let Price;
+        if(coffee == "Espresso"){
+            Price = content[0];
+        }else if(coffee == "Cappuchino"){
+            Price = content[1];
+        }else{
+            Price = content[2]
+        }
+        if(adOn == "Milk"){
+            Price = Price.Milk;
+        }else if(adOn == "Cream"){
+            Price = Price.Cream
+        }else{
+            Price = Price.Latte
+        }
+
+        const Total = Price * Quan
+        totalA = Total + totalA
+        const htmltab = `<tr>
+                    <th>${coffee}</th>
+                    <th>${adOn}</th>
+                    <th>${Price}₹</th>
+                    <th>${Quan}</th>
+                    <th>${Total}₹</th>
+                </tr>`
+        table.innerHTML += htmltab  
+        document.querySelector('#amount').innerHTML = totalA +  "₹"
+    })
+</script>
+
+</html>
